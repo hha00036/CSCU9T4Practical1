@@ -32,14 +32,28 @@ public class TrainingRecord {
    }
    // look up the entry of a given day and month
    public String lookupEntry (int d, int m, int y) {
-       ListIterator<AthleteRunRecord> iter = tr.listIterator();
+	   ListIterator<SwimmingAthlete> iter = swim.listIterator();
+	   ListIterator<RunningAthlete> iter1 = run.listIterator();
+	   ListIterator<CyclingAthlete> iter2 = cycle.listIterator();
        String result = "No entries found";
-       while (iter.hasNext()) {
-    	   AthleteRunRecord current = iter.next();
+       while (iter.hasNext() || iter1.hasNext() || iter2.hasNext()) {
+    	   SwimmingAthlete current = iter.next();
+    	   RunningAthlete current1 = iter1.next();
+    	   CyclingAthlete current2 = iter2.next();
           if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) 
+          {
              result = current.getEntry();
-            }
+          }
+         
+       if (current1.getDay()==d && current1.getMonth()==m && current1.getYear()==y) {
+           result = current1.getEntry();
+          }
+   if (current2.getDay()==d && current2.getMonth()==m && current2.getYear()==y) {
+       result = current2.getEntry();
+      }
+}
        return result; 
+       
    } // lookupEntry
    
    public String removeEntry (String n, int d, int m, int y) {
@@ -47,8 +61,9 @@ public class TrainingRecord {
        String result = "No entries found";
        while (iter.hasNext()) {
     	   AthleteRunRecord current = iter.next();
-          if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) 
-             result = current.getEntry();
+          if (current.getName()==n && current.getDay()==d && current.getMonth()==m && current.getYear()==y) 
+        	  tr.remove(current);
+              result = current.getEntry();
             }
        return result; 
    }

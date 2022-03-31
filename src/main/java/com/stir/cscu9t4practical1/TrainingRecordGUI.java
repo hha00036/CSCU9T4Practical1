@@ -129,7 +129,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             message = lookupAllEntries();
         }
         if (event.getSource() == remove) {
-            
+        	message = RemoveEntry();
         }
         if (event.getSource() == athleteList) {
             athleteList.getSelectedItem(); 	
