@@ -1,4 +1,4 @@
-// GUI and main program for the Training Record
+		// GUI and main program for the Training Record
 package com.stir.cscu9t4practical1;
 
 import java.awt.*;

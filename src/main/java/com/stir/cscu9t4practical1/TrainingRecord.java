@@ -18,16 +18,20 @@ public class TrainingRecord {
     } //constructor
     
     // add a record to the list
-   public void addEntry(AthleteRunRecord e){
+   public void addEntry(AthleteRunRecord e)
+   {
        tr.add(e);    
    } // addClass
-   public void addSwimEntry(SwimmingAthlete e){
+   public void addSwimEntry(SwimmingAthlete e)
+   {
 	   swim.add(e);    
    }
-   public void addRunEntry(RunningAthlete e){
+   public void addRunEntry(RunningAthlete e)
+   {
 	   run.add(e);    
    }
-   public void addCycleEntry(CyclingAthlete e){
+   public void addCycleEntry(CyclingAthlete e)
+   {
 	   cycle.add(e);    
    }
    // look up the entry of a given day and month
